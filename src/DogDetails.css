@@ -1,3 +1,6 @@
-img {
-  width: 75%;
+.DogDetails-card img {
+  width: 525px;
+  height: 525px;
+  object-fit: cover;
+  object-position: 25% 25%;
 }

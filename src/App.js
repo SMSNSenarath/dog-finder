@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import DogList from "./DogList";
-import DogDetails from "./DogDetail";
 import Navbar from "./Navbar";
+import Routes from "./Routes";
 import "./App.css";
 
 class App extends Component {
@@ -11,7 +9,7 @@ class App extends Component {
       {
         name: "Fuzzy",
         age: 3,
-        src: "fuzzy.jpg",
+        src: "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         facts: [
           "Fuzzy loves eating popcorn.",
           "Fuzzy is a terrible guard dog.",
@@ -21,7 +19,7 @@ class App extends Component {
       {
         name: "Dolly",
         age: 4,
-        src: "dolly.jpg",
+        src: "https://images.unsplash.com/photo-1575859431774-2e57ed632664?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         facts: [
           "Dolly has soo much energy!",
           "Dolly is highly intelligen.t",
@@ -31,7 +29,7 @@ class App extends Component {
       {
         name: "Rowdy",
         age: 5,
-        src: "rowdy.jpg",
+        src: "https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         facts: [
           "Rowdy is not the brightest dog.",
           "Rowdy does not like walks or exercise.",
@@ -41,26 +39,12 @@ class App extends Component {
     ],
   };
   render() {
-    const getDog = (props) => {
-      let name = props.match.params.name;
-      let currentDog = this.props.dogs.find(
-        (dog) => dog.name.toLowerCase() === name.toLowerCase()
-      );
-      return <DogDetails {...props} dog={currentDog} />;
-    };
     return (
       <div className="App">
         <div>
           <Navbar dogs={this.props.dogs} />
+          <Routes dogs={this.props.dogs} />
         </div>
-        <Switch>
-          <Route
-            exact
-            path="/dogs"
-            render={() => <DogList dogs={this.props.dogs} />}
-          />
-          <Route exact path="/dogs/:name" render={getDog} />
-        </Switch>
       </div>
     );
   }
