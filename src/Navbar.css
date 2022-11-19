@@ -20,6 +20,8 @@
   color: #fcf6bd;
 } */
 .navbar-nav .nav-link.active,
+.navbar-brand.active,
+#home.active,
 .navbar-nav .show > .nav-link {
   color: #fcf6bd;
 }
