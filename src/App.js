@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import DogList from "./DogList";
 import DogDetails from "./DogDetail";
+import Navbar from "./Navbar";
 import "./App.css";
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
       {
         name: "Fuzzy",
         age: 3,
-        src: "Fuzzy.jpg",
+        src: "fuzzy.jpg",
         facts: [
           "Fuzzy loves eating popcorn.",
           "Fuzzy is a terrible guard dog.",
@@ -20,7 +21,7 @@ class App extends Component {
       {
         name: "Dolly",
         age: 4,
-        src: "Dolly.jpg",
+        src: "dolly.jpg",
         facts: [
           "Dolly has soo much energy!",
           "Dolly is highly intelligen.t",
@@ -30,7 +31,7 @@ class App extends Component {
       {
         name: "Rowdy",
         age: 5,
-        src: "Rowdy.jpg",
+        src: "rowdy.jpg",
         facts: [
           "Rowdy is not the brightest dog.",
           "Rowdy does not like walks or exercise.",
@@ -49,6 +50,9 @@ class App extends Component {
     };
     return (
       <div className="App">
+        <div>
+          <Navbar dogs={this.props.dogs} />
+        </div>
         <Switch>
           <Route
             exact
