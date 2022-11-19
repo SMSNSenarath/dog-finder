@@ -22,7 +22,7 @@ class App extends Component {
         src: "https://images.unsplash.com/photo-1575859431774-2e57ed632664?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
         facts: [
           "Dolly has soo much energy!",
-          "Dolly is highly intelligen.t",
+          "Dolly is highly intelligent",
           "Dolly loves people more than dogs.",
         ],
       },

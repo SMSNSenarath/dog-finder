@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
+import "./Navbar.css";
 
 class Navbar extends Component {
   render() {
@@ -12,25 +13,31 @@ class Navbar extends Component {
     ));
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg bg-dark">
         <Link className="navbar-brand" to="/dogs">
           Dog App
         </Link>
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon" />
+          <span>
+            <i
+              className="fas fa-bars"
+              aria-hidden="true"
+              style={{ color: "#ff99c8" }}
+            ></i>
+          </span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink exact to="/dogs" className="nav-link">
+              <NavLink exact to="/dogs" id="home" className="nav-link">
                 Home
               </NavLink>
             </li>
